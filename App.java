@@ -1,4 +1,5 @@
 import java.io.Console;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,12 +18,23 @@ public class App {
     allCD.add(EnterWuTang);
     allCD.add(Illmatic);
 
+    List<String> menuList =  Arrays.asList(
+            "Please choose one of the following options: ",
+            "1: See all CDs",
+            "2: Search based on release year",
+            "3: Search based on price range",
+            "4: Search based on artist",
+            "5: Exit"
+    );
+
+    String menu = String.join("\n", menuList);
+
     System.out.println("____________________________________________________"+"\n");
     System.out.println("Hello. Welcome to our CD Store.");
     boolean programRunning = true;
     while(programRunning){
       System.out.println("____________________________________________________"+"\n");
-      System.out.println("Please choose one of the following options: " + "\n" + "1: See all CDs" + "\n" + "2: Search based on release year" + "\n" + "3: Search based on price range" + "\n" + "4: Search based on artist" + "\n" + "5: Exit");
+      System.out.print(menu);
       String navigationChoice = myConsole.readLine();
       String choice = navigationChoice;
       switch(choice) {
